@@ -50,9 +50,9 @@ Given a **single PDF** or a **folder of PDFs**, the pipeline:
 
 * Python **3.10+** recommended
 * An **OpenAI API key**
-* (Optional) **LangSmith** API key for tracing
-* (Optional) **MongoDB** (Atlas or local)
-* (Optional) SMTP credentials if you want to actually send emails
+* **LangSmith** API key for tracing
+* **MongoDB** (Atlas or local)
+* SMTP credentials if you want to actually send emails
 
 ---
 
