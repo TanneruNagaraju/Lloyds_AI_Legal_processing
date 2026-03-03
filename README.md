@@ -156,7 +156,7 @@ Outputs will be saved to:
 
 ### Option B — Batch runner (folder)
 
-Edit `input_dir` inside `run_batch.py` (or pass your folder path if you added CLI args), then run:
+Edit `input_dir` inside `main.py` (or pass your folder path if you added CLI args), then run:
 
 ```bash
 python main.py
