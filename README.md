@@ -26,13 +26,13 @@ Given a **single PDF** or a **folder of PDFs**, the pipeline:
 
 ```
 .
-├── app.py                     # Streamlit UI (path-based: file or folder)
+├── app.py                # Streamlit UI (path-based: file or folder)
 ├── main.py               # Batch runner (process a folder, per-file JSON outputs)
 ├── src/
 │   ├── pdf_processor.py
 │   ├── triage_router.py
 │   ├── full_text_extractor.py
-│   ├── rag.py        # your RAG code (Qdrant hybrid + rerank + parent/child)
+│   ├── rag.py        #  RAG code (Qdrant hybrid + rerank + parent/child)
 │   ├── rag_fallback_extractor.py
 │   ├── mongodb_store.py
 │   ├── email_drafter.py
@@ -159,7 +159,7 @@ Outputs will be saved to:
 Edit `input_dir` inside `run_batch.py` (or pass your folder path if you added CLI args), then run:
 
 ```bash
-python run_batch.py
+python main.py
 ```
 
 ---
@@ -199,15 +199,6 @@ outputs/results/2 - Settlement Offer – Harper v CityTaxi Ltd.json
 
 ---
 
-## Notes / Safety
-
-* **Do not commit `.env`** or credentials to GitHub.
-* If you pasted an email password anywhere, **rotate/revoke it immediately**.
-* Email sending can be disabled by not setting `SENDER_EMAIL` / `SENDER_PASSWORD`.
-* For this PoC, PDF parsing assumes text-based PDFs; OCR for image-only scans is not implemented.
-
----
-
 ## Troubleshooting
 
 ### LangSmith project not showing
@@ -223,5 +214,4 @@ Make sure:
 
 The Streamlit and batch runner include `make_json_safe()` to convert Mongo `ObjectId` values to strings before saving.
 
----
 
